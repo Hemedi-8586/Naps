@@ -1,0 +1,18 @@
+Options -Indexes
+
+RewriteEngine On
+
+RewriteBase /naps/
+
+RewriteRule ^$ Public/index.php?url=/ [L,QSA]
+
+RewriteCond %{REQUEST_URI} ^/naps/Public/Assets/ [NC]
+RewriteRule ^ - [L]
+RewriteCond %{THE_REQUEST} /Public/([^\s?]*) [NC]
+
+RewriteCond %{THE_REQUEST} /Public/([^\s?]*) [NC]
+RewriteRule ^Public/(.*)$ /naps/%1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ Public/index.php?url=$1 [L,QSA]

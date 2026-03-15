@@ -1,0 +1,5 @@
+# Hapa Git itapuuza file la siri la password
+.env
+
+# Hapa Git itapuuza folder la kache za VS Code
+.vscode/
